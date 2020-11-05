@@ -4,7 +4,8 @@
 Module implementing MainWindow.
 """
 
-import os,  pickle
+import os
+import pickle
 
 from PyQt5.QtWidgets import QMainWindow, QGraphicsScene, QHeaderView, QTableWidgetItem
 from PyQt5.QtCore import pyqtSlot, QTimer
@@ -15,6 +16,7 @@ from battle import Battle
 from robot import Robot
 from RobotInfo import RobotInfo
 from statistic import statistic
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     """
@@ -42,11 +44,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             with open(os.getcwd() + "/.datas/lastArena",  'rb') as file:
                 unpickler = pickle.Unpickler(file)
                 dico = unpickler.load()
+                self.setUpBattle(dico["width"] , dico["height"], dico["botList"] )
             file.close()
         else:
             print("No last arena found.")
 
-        self.setUpBattle(dico["width"] , dico["height"], dico["botList"] )
         
     def setUpBattle(self, width, height, botList):
         self.tableWidget.clearContents()
