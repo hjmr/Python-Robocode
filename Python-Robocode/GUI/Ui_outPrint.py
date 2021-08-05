@@ -10,10 +10,10 @@
 # WARNING! All changes made in this file will be lost!
 
 
-from PyQt5.QtWidgets import QApplication, QWidget, QTextEdit
-from PyQt5.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout
-from PyQt5.QtGui import QIcon, QPixmap
-from PyQt5.QtCore import QMetaObject
+from PyQt6.QtWidgets import QApplication, QWidget, QTextEdit
+from PyQt6.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout
+from PyQt6.QtGui import QIcon, QPixmap
+from PyQt6.QtCore import QMetaObject
 
 class Ui_Form(object):
     def setupUi(self, Form):

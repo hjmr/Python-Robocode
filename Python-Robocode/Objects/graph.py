@@ -3,9 +3,9 @@
 
 import time, os, random
 
-from PyQt5.QtWidgets import QGraphicsScene, QMessageBox, QGraphicsRectItem
-from PyQt5.QtGui import QPixmap, QColor, QBrush
-from PyQt5.QtCore import QPointF, QRectF
+from PyQt6.QtWidgets import QGraphicsScene, QMessageBox, QGraphicsRectItem
+from PyQt6.QtGui import QPixmap, QColor, QBrush
+from PyQt6.QtCore import QPointF, QRectF
 
 from robot import Robot
 from outPrint import outPrint

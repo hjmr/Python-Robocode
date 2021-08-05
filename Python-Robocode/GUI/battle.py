@@ -7,8 +7,8 @@ Module implementing Battle.
 import os
 import pickle
 
-from PyQt5.QtWidgets import QDialog
-from PyQt5.QtCore import pyqtSlot
+from PyQt6.QtWidgets import QDialog
+from PyQt6.QtCore import pyqtSlot
 
 from robot import Robot
 from Ui_battle import Ui_Dialog

@@ -4,8 +4,8 @@
 import os
 import math
 
-from PyQt5.QtWidgets import QGraphicsPixmapItem
-from PyQt5.QtGui import QPixmap, QColor, QPainter
+from PyQt6.QtWidgets import QGraphicsPixmapItem
+from PyQt6.QtGui import QPixmap, QColor, QPainter
 
 class Bullet(QGraphicsPixmapItem):
     

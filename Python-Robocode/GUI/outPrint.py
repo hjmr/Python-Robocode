@@ -4,7 +4,7 @@
 Module implementing outPrint.
 """
 
-from PyQt5.QtWidgets import QWidget
+from PyQt6.QtWidgets import QWidget
 
 from Ui_outPrint import Ui_Form
 

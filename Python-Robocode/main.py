@@ -8,7 +8,7 @@ sys.path.append(os.getcwd() + "/Objects")
 sys.path.append(os.getcwd() + "/robotImages")
 sys.path.append(os.getcwd() + "/Robots")
 from window import MainWindow
-from PyQt5.QtWidgets import QApplication
+from PyQt6.QtWidgets import QApplication
 
 
 if __name__ == "__main__":

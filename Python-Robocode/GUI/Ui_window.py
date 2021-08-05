@@ -10,12 +10,12 @@
 # WARNING! All changes made in this file will be lost!
 
 
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QTableWidget, QGraphicsView
-from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QPushButton, QSlider, QLabel
-from PyQt5.QtWidgets import QSpinBox, QSpacerItem, QMenuBar, QMenu, QStatusBar
-from PyQt5.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout, QAction
-from PyQt5.QtGui import QIcon, QPixmap
-from PyQt5.QtCore import Qt, QSize, QRect, QMetaObject
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QTableWidget, QGraphicsView
+from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QPushButton, QSlider, QLabel
+from PyQt6.QtWidgets import QSpinBox, QSpacerItem, QMenuBar, QMenu, QStatusBar
+from PyQt6.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout
+from PyQt6.QtGui import QIcon, QPixmap, QAction
+from PyQt6.QtCore import Qt, QSize, QRect, QMetaObject
 
 
 class Ui_MainWindow(object):

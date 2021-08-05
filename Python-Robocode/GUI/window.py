@@ -6,8 +6,8 @@ Module implementing MainWindow.
 
 import os,  pickle
 
-from PyQt5.QtWidgets import QMainWindow, QGraphicsScene, QHeaderView, QTableWidgetItem
-from PyQt5.QtCore import pyqtSlot, QTimer
+from PyQt6.QtWidgets import QMainWindow, QGraphicsScene, QHeaderView, QTableWidgetItem
+from PyQt6.QtCore import pyqtSlot, QTimer
 
 from graph import Graph
 from Ui_window import Ui_MainWindow

@@ -1,6 +1,6 @@
    
-from PyQt5.QtWidgets import QSlider, QTextEdit
-from PyQt5.QtCore import pyqtSignal
+from PyQt6.QtWidgets import QSlider, QTextEdit
+from PyQt6.QtCore import pyqtSignal
 
 class scrolltext(QTextEdit):
     def __init__(self, parent=None):

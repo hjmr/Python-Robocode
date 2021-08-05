@@ -9,10 +9,10 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5.QtWidgets import QApplication, QDialog, QLabel, QSpacerItem, QListWidget, QPushButton, QSpinBox
-from PyQt5.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout
-from PyQt5.QtGui import QIcon, QPixmap, QFont
-from PyQt5.QtCore import QSize, QMetaObject
+from PyQt6.QtWidgets import QApplication, QDialog, QLabel, QSpacerItem, QListWidget, QPushButton, QSpinBox
+from PyQt6.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout
+from PyQt6.QtGui import QIcon, QPixmap, QFont
+from PyQt6.QtCore import QSize, QMetaObject
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
