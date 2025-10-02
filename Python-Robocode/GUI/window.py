@@ -8,7 +8,6 @@ import os
 import pickle
 import re
 
-from twisted.python import reflect
 from importlib import reload
 
 from PyQt6.QtWidgets import QMainWindow, QGraphicsScene, QHeaderView, QTableWidgetItem
