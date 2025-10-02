@@ -2,8 +2,8 @@
 #-*- coding: utf-8 -*-
 
 
-from PyQt5.QtWidgets import QGraphicsItemGroup, QGraphicsPolygonItem, QGraphicsEllipseItem
-from PyQt5.QtGui import QPolygonF, QColor, QBrush, QPen
+from PyQt6.QtWidgets import QGraphicsItemGroup, QGraphicsPolygonItem, QGraphicsEllipseItem
+from PyQt6.QtGui import QPolygonF, QColor, QBrush, QPen
 
 
 class radarField(QGraphicsItemGroup):

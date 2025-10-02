@@ -4,8 +4,8 @@
 Module implementing RobotInfo.
 """
 
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtCore import pyqtSlot
+from PyQt6.QtWidgets import QWidget
+from PyQt6.QtCore import pyqtSlot
 
 from outPrint import outPrint
 from Ui_RobotInfo import Ui_Form

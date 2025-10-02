@@ -6,8 +6,8 @@ Module implementing MainWindow.
 
 import os,  pickle
 
-from PyQt5.QtWidgets import QMainWindow, QGraphicsScene, QHeaderView, QTableWidgetItem
-from PyQt5.QtCore import pyqtSlot, QTimer
+from PyQt6.QtWidgets import QMainWindow, QGraphicsScene, QHeaderView, QTableWidgetItem
+from PyQt6.QtCore import pyqtSlot, QTimer
 
 from graph import Graph
 from Ui_window import Ui_MainWindow
@@ -28,7 +28,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.countBattle = 0
         self.timer = QTimer()
-        self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         self.tableWidget.hide()
         
     
@@ -78,7 +78,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.graphicsView.setScene(self.scene)
         self.scene.AddRobots(self.botList)
         self.timer.timeout.connect(self.scene.advance)
-        self.timer.start((self.horizontalSlider.value()**2)/100.0)
+        self.timer.start((self.horizontalSlider.value()**2)//100)
         self.resizeEvent()
     
     @pyqtSlot(int)
@@ -86,7 +86,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Slot documentation goes here.
         """
-        self.timer.setInterval((value**2)/100.0)
+        self.timer.setInterval((value**2)//100)
     
     @pyqtSlot()
     def on_actionNew_triggered(self):

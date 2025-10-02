@@ -9,17 +9,17 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5.QtWidgets import QApplication, QDialog, QLabel, QSpacerItem, QListWidget, QPushButton, QSpinBox
-from PyQt5.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout
-from PyQt5.QtGui import QIcon, QPixmap, QFont
-from PyQt5.QtCore import QSize, QMetaObject
+from PyQt6.QtWidgets import QApplication, QDialog, QLabel, QSpacerItem, QListWidget, QPushButton, QSpinBox
+from PyQt6.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout
+from PyQt6.QtGui import QIcon, QPixmap, QFont
+from PyQt6.QtCore import QSize, QMetaObject
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(572, 399)
         icon = QIcon()
-        icon.addPixmap(QPixmap("robotImages/smallgrey.png"), QIcon.Normal, QIcon.Off)
+        icon.addPixmap(QPixmap("robotImages/smallgrey.png"), QIcon.Mode.Normal, QIcon.State.Off)
         Dialog.setWindowIcon(icon)
         Dialog.setModal(False)
         self.verticalLayout_5 = QVBoxLayout(Dialog)
@@ -30,7 +30,7 @@ class Ui_Dialog(object):
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.label = QLabel(Dialog)
         font = QFont()
@@ -40,7 +40,7 @@ class Ui_Dialog(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
-        spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout.addItem(spacerItem1)
         self.verticalLayout_3.addLayout(self.horizontalLayout)
         self.listWidget = QListWidget(Dialog)
@@ -50,7 +50,7 @@ class Ui_Dialog(object):
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.pushButton = QPushButton(Dialog)
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
@@ -58,7 +58,7 @@ class Ui_Dialog(object):
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout.addWidget(self.pushButton)
         self.pushButton_2 = QPushButton(Dialog)
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
@@ -70,7 +70,7 @@ class Ui_Dialog(object):
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem2)
         self.label_2 = QLabel(Dialog)
         font = QFont()
@@ -80,7 +80,7 @@ class Ui_Dialog(object):
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.horizontalLayout_5.addWidget(self.label_2)
-        spacerItem3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem3)
         self.verticalLayout_4.addLayout(self.horizontalLayout_5)
         self.listWidget_2 = QListWidget(Dialog)
@@ -92,7 +92,7 @@ class Ui_Dialog(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        spacerItem4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem4)
         self.label_3 = QLabel(Dialog)
         font = QFont()
@@ -102,12 +102,12 @@ class Ui_Dialog(object):
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout_4.addWidget(self.label_3)
-        spacerItem5 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem5 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem5)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        spacerItem6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem6)
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -138,16 +138,16 @@ class Ui_Dialog(object):
         self.label_6 = QLabel(Dialog)
         self.label_6.setObjectName("label_6")
         self.horizontalLayout_3.addWidget(self.label_6)
-        spacerItem7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem7 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem7)
         self.verticalLayout_2.addLayout(self.horizontalLayout_3)
         self.verticalLayout_5.addLayout(self.verticalLayout_2)
         self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        spacerItem8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem8 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout_7.addItem(spacerItem8)
         self.pushButton_3 = QPushButton(Dialog)
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
@@ -159,7 +159,7 @@ class Ui_Dialog(object):
         self.pushButton_3.setFont(font)
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout_7.addWidget(self.pushButton_3)
-        spacerItem9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem9 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout_7.addItem(spacerItem9)
         self.verticalLayout_5.addLayout(self.horizontalLayout_7)
 
