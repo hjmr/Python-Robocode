@@ -6,6 +6,7 @@ import math
 
 from PyQt6.QtWidgets import QGraphicsPixmapItem
 from PyQt6.QtGui import QPixmap, QColor, QPainter
+from PyQt6.QtCore import Qt
 
 class Bullet(QGraphicsPixmapItem):
     
@@ -41,7 +42,7 @@ class Bullet(QGraphicsPixmapItem):
 
         
     def setColour(self, color):
-        mask = self.pixmap.createMaskFromColor(self.maskColor,  1)
+        mask = self.pixmap.createMaskFromColor(self.maskColor,  Qt.MaskMode.MaskOutColor)
         p = QPainter(self.pixmap)
         p.setPen(color)
         p.drawPixmap(self.pixmap.rect(), mask, mask.rect())

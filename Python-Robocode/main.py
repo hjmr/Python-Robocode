@@ -17,4 +17,4 @@ if __name__ == "__main__":
    app.setApplicationName("Python-Robocode")
    myapp = MainWindow()
    myapp.show()
-   sys.exit(app.exec_())
+   sys.exit(app.exec())

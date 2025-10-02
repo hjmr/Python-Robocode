@@ -20,7 +20,7 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(444, 383)
         icon = QIcon()
-        icon.addPixmap(QPixmap("robotImages/small.png"), QIcon.Normal, QIcon.Off)
+        icon.addPixmap(QPixmap("robotImages/small.png"), QIcon.Mode.Normal, QIcon.State.Off)
         Form.setWindowIcon(icon)
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
