@@ -12,8 +12,9 @@
 
 from PyQt6.QtWidgets import QApplication, QWidget, QTextEdit
 from PyQt6.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout
-from PyQt6.QtGui import QIcon, QPixmap
+from PyQt6.QtGui import QIcon, QPixmap, QTextCursor
 from PyQt6.QtCore import QMetaObject
+
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -24,9 +25,14 @@ class Ui_Form(object):
         Form.setWindowIcon(icon)
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
+
         self.textEdit = QTextEdit(Form)
         self.textEdit.setObjectName("textEdit")
+        self.textEdit.setPlainText("     ")
+        self.textCursor = QTextCursor(self.textEdit.document())
         self.verticalLayout.addWidget(self.textEdit)
+
+        self.isTextEmpty = True
 
         self.retranslateUi(Form)
         QMetaObject.connectSlotsByName(Form)
@@ -37,10 +43,10 @@ class Ui_Form(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QApplication(sys.argv)
     Form = QWidget()
     ui = Ui_Form()
     ui.setupUi(Form)
     Form.show()
-    sys.exit(app.exec_())
-
+    sys.exit(app.exec())
