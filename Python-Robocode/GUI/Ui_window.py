@@ -11,7 +11,7 @@
 
 
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QTableWidget, QGraphicsView
-from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QPushButton, QSlider, QLabel
+from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QPushButton, QSlider, QLabel, QCheckBox
 from PyQt6.QtWidgets import QSpinBox, QSpacerItem, QMenuBar, QMenu, QStatusBar
 from PyQt6.QtWidgets import QSizePolicy, QVBoxLayout, QHBoxLayout
 from PyQt6.QtGui import QIcon, QPixmap, QAction
@@ -50,55 +50,74 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(4, item)
         self.tableWidget.horizontalHeader().setStretchLastSection(False)
         self.verticalLayout_3.addWidget(self.tableWidget)
+
         self.graphicsView = QGraphicsView(self.centralwidget)
         self.graphicsView.setEnabled(True)
         self.graphicsView.setStyleSheet("background-color: rgba(206, 206, 206, 162);")
         self.graphicsView.setObjectName("graphicsView")
+
         self.verticalLayout_3.addWidget(self.graphicsView)
+
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
+
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout.addWidget(self.pushButton)
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.label_2 = QLabel(self.centralwidget)
-        self.label_2.setObjectName("label_2")
-        self.horizontalLayout.addWidget(self.label_2)
-        self.spinBox = QSpinBox(self.centralwidget)
-        self.spinBox.setMaximum(10000)
-        self.spinBox.setProperty("value", 10)
-        self.spinBox.setObjectName("spinBox")
-        self.horizontalLayout.addWidget(self.spinBox)
+        
+        self.label_battle_num = QLabel(self.centralwidget)
+        self.label_battle_num.setObjectName("label_2")
+        self.horizontalLayout.addWidget(self.label_battle_num)
+        self.spinBox_battle_num = QSpinBox(self.centralwidget)
+        self.spinBox_battle_num.setMaximum(10000)
+        self.spinBox_battle_num.setProperty("value", 10)
+        self.spinBox_battle_num.setObjectName("spinBox")
+        self.horizontalLayout.addWidget(self.spinBox_battle_num)
         self.verticalLayout.addLayout(self.horizontalLayout)
+
+        #self.cbRandomWalls = QCheckBox(self.centralwidget)
+        #self.cbRandomWalls.setObjectName("cbRandomWalls")
+        #self.verticalLayout.addWidget(self.cbRandomWalls)
+
         self.horizontalLayout_2.addLayout(self.verticalLayout)
+        
         spacerItem = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem)
+        
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.label = QLabel(self.centralwidget)
-        self.label.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.label.setStyleSheet("")
-        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label.setObjectName("label")
-        self.verticalLayout_2.addWidget(self.label)
-        self.horizontalSlider = QSlider(self.centralwidget)
+        
+        self.label_game_speed = QLabel(self.centralwidget)
+        self.label_game_speed.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label_game_speed.setStyleSheet("")
+        self.label_game_speed.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label_game_speed.setObjectName("label")
+        self.verticalLayout_2.addWidget(self.label_game_speed)
+
+        self.hslider_game_speed = QSlider(self.centralwidget)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.horizontalSlider.sizePolicy().hasHeightForWidth())
-        self.horizontalSlider.setSizePolicy(sizePolicy)
-        self.horizontalSlider.setMinimumSize(QSize(200, 0))
-        self.horizontalSlider.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
-        self.horizontalSlider.setMaximum(120)
-        self.horizontalSlider.setProperty("value", 60)
-        self.horizontalSlider.setOrientation(Qt.Orientation.Horizontal)
-        self.horizontalSlider.setInvertedAppearance(False)
-        self.horizontalSlider.setInvertedControls(True)
-        self.horizontalSlider.setObjectName("horizontalSlider")
-        self.verticalLayout_2.addWidget(self.horizontalSlider)
+        sizePolicy.setHeightForWidth(self.hslider_game_speed.sizePolicy().hasHeightForWidth())
+        self.hslider_game_speed.setSizePolicy(sizePolicy)
+        self.hslider_game_speed.setMinimumSize(QSize(200, 0))
+        self.hslider_game_speed.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
+        self.hslider_game_speed.setMaximum(120)
+        self.hslider_game_speed.setProperty("value", 60)
+        self.hslider_game_speed.setOrientation(Qt.Orientation.Horizontal)
+        self.hslider_game_speed.setInvertedAppearance(False)
+        self.hslider_game_speed.setInvertedControls(True)
+        self.hslider_game_speed.setObjectName("horizontalSlider")
+        self.verticalLayout_2.addWidget(self.hslider_game_speed)
+
+        self.terminateButton = QPushButton(self.centralwidget)
+        self.terminateButton.setObjectName("terminateButton")
+        self.verticalLayout_2.addWidget(self.terminateButton)
+                
         self.horizontalLayout_2.addLayout(self.verticalLayout_2)
         self.verticalLayout_3.addLayout(self.horizontalLayout_2)
         self.horizontalLayout_3.addLayout(self.verticalLayout_3)
@@ -165,8 +184,8 @@ class Ui_MainWindow(object):
         item = self.tableWidget.horizontalHeaderItem(4)
         item.setText(QApplication.translate("MainWindow", "Points"))
         self.pushButton.setText(QApplication.translate("MainWindow", "Start Last Battle"))
-        self.label_2.setText(QApplication.translate("MainWindow", "Battle\'s Number"))
-        self.label.setText(QApplication.translate("MainWindow", "Game Speed"))
+        self.label_battle_num.setText(QApplication.translate("MainWindow", "Battle\'s Number"))
+        self.label_game_speed.setText(QApplication.translate("MainWindow", "Game Speed"))
         self.menuBattle.setTitle(QApplication.translate("MainWindow", "Battle"))
         self.menuRobot.setTitle(QApplication.translate("MainWindow", "Robot"))
         self.menuHelp.setTitle(QApplication.translate("MainWindow", "Help"))
@@ -175,6 +194,8 @@ class Ui_MainWindow(object):
         self.actionOpen.setText(QApplication.translate("MainWindow", "Open"))
         self.actionClass_Reference.setText(QApplication.translate("MainWindow", "Class Reference"))
         self.actionAbout.setText(QApplication.translate("MainWindow", "About"))
+        # self.cbRandomWalls.setText(QApplication.translate("MainWindow", "Set Random Walls"))
+        self.terminateButton.setText(QApplication.translate("MainWindow", "Terminate Current Battle"))
 
 
 if __name__ == "__main__":
