@@ -80,6 +80,7 @@ class Graph(QGraphicsScene):
                 self.Parent.statisticDico[repr(self.deadBots[i])].third += 1
                 
             self.Parent.statisticDico[repr(self.deadBots[i])].points += i
+            self.Parent.statisticDico[repr(self.deadBots[i])].kills += self.deadBots[i].getKills()
                 
         self.Parent.chooseAction()       
 

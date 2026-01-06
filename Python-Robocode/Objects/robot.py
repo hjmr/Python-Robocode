@@ -24,6 +24,8 @@ class Robot(QGraphicsItemGroup):
         self.__repr = repr
         self.__gunLock = "free"
         self.__radarLock = "Free"
+        self.__kills = 0 # the number of kills
+        self.__lastHitBy = None # the robot hit me at the last moment
         
         self.info = None # RobotInfo (should be set in window.py::addRobotInfo())
         
@@ -376,6 +378,7 @@ class Robot(QGraphicsItemGroup):
         bullet.init(pos, angle, self.__parent)
 
         self.__changeHealth(self, -bullet.power) 
+        self.__lastHitBy = None
         return id(bullet)
         
     def setBulletsColor(self, r, g, b):
@@ -416,6 +419,9 @@ class Robot(QGraphicsItemGroup):
             dic = {"id":id(bot), "name":bot.__repr__()}
             l.append(dic)
         return l
+
+    def getKills(self):
+        return self.__kills
         
     def rPrint(self, msg):
         if self.info is not None:
@@ -470,6 +476,7 @@ class Robot(QGraphicsItemGroup):
             y = - self.__physics.step*1.1
         self.setPos(self.pos().x() + x, self.pos().y() + y)
         self.__changeHealth(self,  -1)
+        self.__lastHitBy = None
         self.stop()
         try:
             self.onHitWall()
@@ -499,6 +506,8 @@ class Robot(QGraphicsItemGroup):
             robot.setPos(x+dx, y+dy)
             self.__changeHealth(robot,  -1)
             self.__changeHealth(self,  -1)
+            robot.__lastHitBy = self
+            self.__lastHitBy = robot
             self.stop()
             self.onRobotHit(id(robot), robot.__repr__())
             animation = self.__physics.makeAnimation()
@@ -517,6 +526,7 @@ class Robot(QGraphicsItemGroup):
         
     def __bulletRebound(self, bullet):
         self.__changeHealth(self,  - 3*bullet.power)
+        self.__lastHitBy = bullet.robot
         try:
             if bullet.robot in self.__parent.aliveBots:
                 self.__changeHealth(bullet.robot,   2*bullet.power)
@@ -570,6 +580,8 @@ class Robot(QGraphicsItemGroup):
     def __death(self):
         
         try:
+            if self.__lastHitBy is not None:
+                self.__lastHitBy.__kills += 1
             self.icon.setIcon(QIcon(os.getcwd() + "/robotImages/dead.png"))
             self.icon2.setIcon(QIcon(os.getcwd() + "/robotImages/dead.png"))
             self.progressBar.setValue(0)

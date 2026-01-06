@@ -173,6 +173,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.tableWidget.setItem(i, 2,  QTableWidgetItem(str(value.second)))
                 self.tableWidget.setItem(i, 3,  QTableWidgetItem(str(value.third)))
                 self.tableWidget.setItem(i, 4,  QTableWidgetItem(str(value.points)))
+                self.tableWidget.setItem(i, 5,  QTableWidgetItem(str(value.kills)))
                
                 i += 1
                 
