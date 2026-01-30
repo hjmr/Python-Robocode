@@ -8,3 +8,4 @@ class statistic():
         self.second = 0
         self.third = 0
         self.points = 0
+        self.kills = 0

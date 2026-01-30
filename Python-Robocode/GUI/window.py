@@ -62,7 +62,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         botList = [self.reimport_class(bot) for bot in dico["botList"]]
         self.setUpBattle(dico["width"], dico["height"], botList)
-        
+
+    @pyqtSlot()
+    def on_terminateButton_clicked(self):
+        """
+        Terminate Current Battle
+        """
+        try:
+            self.timer.stop()
+            self.scene.killAllRobots()
+            self.scene.battleFinished()
+        except:
+            pass
+
     def setUpBattle(self, width, height, botList):
         self.tableWidget.clearContents()
         self.tableWidget.hide()
@@ -93,7 +105,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.graphicsView.setScene(self.scene)
         self.scene.AddRobots(self.botList)
         self.timer.timeout.connect(self.scene.advance)
-        self.timer.start((self.horizontalSlider.value()**2)//100)
+        self.timer.start((self.hslider_game_speed.value()**2)//100)
         self.resizeEvent()
     
     @pyqtSlot(int)
@@ -149,7 +161,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         p.setPos(0, (l -1)*80)
         
     def chooseAction(self):
-        if self.countBattle >= self.spinBox.value():
+        if self.countBattle >= self.spinBox_battle_num.value():
             "Menu Statistic"
             self.graphicsView.hide()
             self.tableWidget.show()
@@ -161,6 +173,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.tableWidget.setItem(i, 2,  QTableWidgetItem(str(value.second)))
                 self.tableWidget.setItem(i, 3,  QTableWidgetItem(str(value.third)))
                 self.tableWidget.setItem(i, 4,  QTableWidgetItem(str(value.points)))
+                self.tableWidget.setItem(i, 5,  QTableWidgetItem(str(value.kills)))
                
                 i += 1
                 

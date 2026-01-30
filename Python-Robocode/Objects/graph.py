@@ -48,6 +48,18 @@ class Graph(QGraphicsScene):
         except AttributeError:
             pass
 
+    def killAllRobots(self):
+        print("kill all robots")
+        try:
+            self.aliveBots.sort(key=lambda r: r._Robot__health)
+            for r in self.aliveBots:
+                self.deadBots.append(r)
+                self.removeItem(r)
+            self.aliveBots = []
+        except:
+            pass
+
+
     def  battleFinished(self):
         print("battle terminated")
         try:
@@ -68,6 +80,7 @@ class Graph(QGraphicsScene):
                 self.Parent.statisticDico[repr(self.deadBots[i])].third += 1
                 
             self.Parent.statisticDico[repr(self.deadBots[i])].points += i
+            self.Parent.statisticDico[repr(self.deadBots[i])].kills += self.deadBots[i].getKills()
                 
         self.Parent.chooseAction()       
 
