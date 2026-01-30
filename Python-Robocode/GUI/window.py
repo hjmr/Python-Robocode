@@ -51,17 +51,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Start the last battle
         """
-
-        if os.path.exists(os.getcwd() + "/.datas/lastArena"):
-            with open(os.getcwd() + "/.datas/lastArena",  'rb') as file:
+        arenaPath = os.path.join(os.getcwd(), ".datas", "lastArena")
+        if os.path.exists(arenaPath):
+            with open(arenaPath,  'rb') as file:
                 unpickler = pickle.Unpickler(file)
                 dico = unpickler.load()
-            file.close()
+                botList = [self.reimport_class(bot) for bot in dico["botList"]]
+                self.setUpBattle(dico["width"], dico["height"], botList)
         else:
             print("No last arena found.")
         
-        botList = [self.reimport_class(bot) for bot in dico["botList"]]
-        self.setUpBattle(dico["width"], dico["height"], botList)
+
 
     @pyqtSlot()
     def on_terminateButton_clicked(self):
